@@ -1,0 +1,27 @@
+name: Rust CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: clippy, rustfmt
+          override: true
+      - name: Run Clippy
+        run: cargo clippy -- -D warnings
+      - name: Run Rustfmt
+        run: cargo fmt -- --check
+      - name: Run Tests
+        run: cargo test
