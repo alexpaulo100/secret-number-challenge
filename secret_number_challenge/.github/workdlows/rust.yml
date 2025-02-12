@@ -25,8 +25,13 @@ jobs:
           toolchain: stable  # Garantindo que estamos usando a versão estável do Rust
           components: clippy, rustfmt  # Inclui clippy e rustfmt para análise e formatação
 
+      - name: Ensure correct directory
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -la
+
       - name: Build project
-        run: cargo build --verbose  # Não é necessário navegar para outra pasta, já que o Cargo.toml está na raiz
+        run: cargo build --verbose  # Garantir que estamos na pasta onde está o Cargo.toml
 
       - name: Run tests
         run: cargo test --verbose  # Executa os testes na raiz onde está o Cargo.toml
