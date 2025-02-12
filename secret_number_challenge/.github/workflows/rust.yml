@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Usa a versão v2 para maior estabilidade
+        uses: actions/checkout@v2  # Use a versão v2 para maior estabilidade
 
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
@@ -25,13 +25,8 @@ jobs:
           toolchain: stable  # Garantindo que estamos usando a versão estável do Rust
           components: clippy, rustfmt  # Inclui clippy e rustfmt para análise e formatação
 
-      - name: Ensure correct directory
-        run: |
-          echo "Current directory: $(pwd)"
-          ls -la
-
       - name: Build project
-        run: cargo build --verbose  # Garantir que estamos na pasta onde está o Cargo.toml
+        run: cargo build --verbose
 
       - name: Run tests
-        run: cargo test --verbose  # Executa os testes na raiz onde está o Cargo.toml
+        run: cargo test --verbose
