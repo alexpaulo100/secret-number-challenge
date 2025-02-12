@@ -6,6 +6,17 @@ pub fn generate_secret_number() -> u32 {
     rand::thread_rng().gen_range(1..=100)
 }
 
+/// Função que compara a tentativa do jogador com o número secreto
+pub fn check_guess(guess: u32, secret_number: u32) -> String {
+    if guess < secret_number {
+        "Muito baixo! Tente novamente.".to_string()
+    } else if guess > secret_number {
+        "Muito alto! Tente novamente.".to_string()
+    } else {
+        "Parabéns! Você decifrou o número secreto em 1 tentativas.".to_string()
+    }
+}
+
 /// Função que lida com o jogo e verifica a tentativa do jogador
 pub fn start_game() {
     println!("Bem-vindo ao Desafio do Número Secreto!");
@@ -29,12 +40,10 @@ pub fn start_game() {
 
         attempts += 1;
 
-        if guess < secret_number {
-            println!("Muito baixo! Tente novamente.");
-        } else if guess > secret_number {
-            println!("Muito alto! Tente novamente.");
-        } else {
-            println!("Parabéns! Você decifrou o número secreto em {} tentativas.", attempts);
+        let result = check_guess(guess, secret_number);
+        println!("{}", result);
+
+        if guess == secret_number {
             break;
         }
     }
