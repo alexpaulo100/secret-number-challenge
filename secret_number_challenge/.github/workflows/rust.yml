@@ -16,17 +16,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # Use a versão v2 para maior estabilidade
+    - name: Checkout code
+      uses: actions/checkout@v2  
 
-      - name: Set up Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable  # Garantindo que estamos usando a versão estável do Rust
-          components: clippy, rustfmt  # Inclui clippy e rustfmt para análise e formatação
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable  
+        components: clippy, rustfmt  
 
-      - name: Build project
-        run: cargo build --verbose
+    - name: Build project
+      run: cargo build --verbose
 
-      - name: Run tests
-        run: cargo test --verbose
+    - name: Run tests
+      run: cargo test --verbose
