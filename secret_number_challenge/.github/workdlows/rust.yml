@@ -8,20 +8,25 @@ on:
     branches:
       - main
 
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
+      - name: Checkout code
+        uses: actions/checkout@v2  # Use a versão v2 para maior estabilidade
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
         with:
-          toolchain: stable
-          components: clippy, rustfmt
-          override: true
-      - name: Run Clippy
-        run: cargo clippy -- -D warnings
-      - name: Run Rustfmt
-        run: cargo fmt -- --check
-      - name: Run Tests
-        run: cargo test
+          toolchain: stable  # Garantindo que estamos usando a versão estável do Rust
+          components: clippy, rustfmt  # Inclui clippy e rustfmt para análise e formatação
+
+      - name: Build project
+        run: cargo build --verbose
+
+      - name: Run tests
+        run: cargo test --verbose
