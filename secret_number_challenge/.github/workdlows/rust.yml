@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Use a versão v2 para maior estabilidade
+        uses: actions/checkout@v2  # Usa a versão v2 para maior estabilidade
 
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
@@ -26,7 +26,7 @@ jobs:
           components: clippy, rustfmt  # Inclui clippy e rustfmt para análise e formatação
 
       - name: Build project
-        run: cargo build --verbose
+        run: cargo build --verbose  # Não é necessário navegar para outra pasta, já que o Cargo.toml está na raiz
 
       - name: Run tests
-        run: cargo test --verbose
+        run: cargo test --verbose  # Executa os testes na raiz onde está o Cargo.toml
