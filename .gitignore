@@ -1,0 +1,45 @@
+# Diretórios de build
+/target/
+
+# Arquivos de configuração do Cargo
+/Cargo.lock
+
+# Rust
+target/
+**/*.rs.bk
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Visual Studio Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Byebug
+.byebug_history
+
+# Coverage
+coverage/
+
+# Outros arquivos temporários
+.DS_Store
+*.swp
