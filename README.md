@@ -4,6 +4,8 @@ This project is a Rust-based application that implements the "Secret Number Chal
 
 Additionally, this project is set up with **GitHub Actions** for continuous integration (CI) to automatically build, test, and run the code every time changes are pushed to the repository.
 
+[![Rust CI](https://github.com/alexpaulo100/secret-number-challenge/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/alexpaulo100/secret-number-challenge/actions/workflows/rust.yml)
+
 ## Features
 
 - **Secret Number Challenge**: A simple game where you try to guess a secret number between 1 and 100.
