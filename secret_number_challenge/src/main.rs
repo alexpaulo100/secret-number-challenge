@@ -3,7 +3,7 @@ use secret_number_challenge::start_game;
 
 fn main() {
     // Define o comando principal
-    let matches = Command::new("guess")
+    let matches = Command::new("secret_number_challenge")
         .version("1.0")
         .author("Alex Silva")
         .about("Desafio do Número Secreto")
@@ -13,9 +13,14 @@ fn main() {
         )
         .get_matches();
 
+    // Lida com os subcomandos
     match matches.subcommand() {
         Some(("start", _)) => start_game(),
-        None => println!("Use o comando `guess start` para começar o desafio."),
-        _ => unreachable!(),
+        None => {
+            println!("Use o comando `secret_number_challenge start` para começar o desafio.");
+        },
+        _ => {
+            println!("Comando desconhecido. Use `secret_number_challenge start` para começar.");
+        },
     }
 }

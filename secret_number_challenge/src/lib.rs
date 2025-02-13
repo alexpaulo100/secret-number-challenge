@@ -7,13 +7,13 @@ pub fn generate_secret_number() -> u32 {
 }
 
 /// Função que compara a tentativa do jogador com o número secreto
-pub fn check_guess(guess: u32, secret_number: u32) -> String {
+pub fn check_guess(guess: u32, secret_number: u32, attempts: u32) -> String {
     if guess < secret_number {
         "Muito baixo! Tente novamente.".to_string()
     } else if guess > secret_number {
         "Muito alto! Tente novamente.".to_string()
     } else {
-        "Parabéns! Você decifrou o número secreto em 1 tentativas.".to_string()
+        format!("Parabéns! Você decifrou o número secreto em {} tentativas.", attempts)
     }
 }
 
@@ -40,7 +40,7 @@ pub fn start_game() {
 
         attempts += 1;
 
-        let result = check_guess(guess, secret_number);
+        let result = check_guess(guess, secret_number, attempts);
         println!("{}", result);
 
         if guess == secret_number {
