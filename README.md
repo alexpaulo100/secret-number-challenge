@@ -1,4 +1,4 @@
-# github-actions-rust
+# secret-number-challenge
 
 This project is a Rust-based application that implements the "Secret Number Challenge" game. The application is designed to guess a secret number between 1 and 100, with the user providing guesses until they discover the correct number.
 
@@ -23,9 +23,7 @@ Once Rust is installed, clone the repository and run the following commands:
 
 ```bash
 # Clone the repository
-git clone https://github.com/alexpaulo100/github-actions-rust.git
-
-cd github-actions-rust/secret_number_challenge
+git clone https://github.com/alexpaulo100/secret-number-challenge.git
 
 # Build the project
 cargo build
