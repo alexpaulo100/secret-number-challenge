@@ -1,1 +1,0 @@
-/home/alex/projetos/github-actions-rust/secret_number_challenge/target/debug/secret_number_challenge: /home/alex/projetos/github-actions-rust/secret_number_challenge/src/lib.rs /home/alex/projetos/github-actions-rust/secret_number_challenge/src/main.rs
